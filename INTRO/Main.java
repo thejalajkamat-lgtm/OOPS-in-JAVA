@@ -1,73 +1,62 @@
+import java.util.Scanner;
+
+class Student{
+     String name;
+     int rno;
+     double marks;
+
+     //Parameterized constructor
+     Student(String name, int rno,double marks ){
+        this.name = name;
+        this.rno = rno;
+        this.marks = marks;
+     }
+     void display(){
+        System.out.println("Name: "+name);
+        System.out.println("Roll no:  "+rno);
+        System.out.println("Marks: "+marks);
+        System.out.println("--------------- ");
+     }
+}
 public class Main{
-      //create a class
-     static class Student{
-          int rno;
-          String name;
-          float marks;
-          //we need a way to add the values of the above 
-          //properties object by object
-          //we need one word to access every object
-          void greeting(){
-               System.out.println("Hello Single Moms!!. I am "+this.name);
-          }
-          void changeName(String newName){
-               name = newName;
-          }
-          Student(Student other){
-               this.name = other.name;
-               this.rno = other.rno;
-               this.marks = other.marks;
-          }
-          // Student(){
-          // this.rno = 69;
-          // this.name = "Dogla Dalal";
-          // this.marks = 99;
-          // }
-          Student(){
-               //this is how we call a constructor from another constructor
-               //internally: new Student(14, "Default person", 43);
-               this(14, "Default person", 43);
-          }
-          Student(int rno, String name, float marks){
-               this.rno = rno;
-               this.name = name;
-               this.marks = marks;        
-          }  
-     }
-     public static void main(String[] args){
-          //store 5 roll nos
-          int[] numbers = new int[5];
+   public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
 
-          //store 5 names
-          String[] names = new String[5];
+       //Input of Student 1
+       System.out.println("Enter name of student1: ");
+       String name1 = sc.nextLine();
+       System.out.println("Enter roll no of student1: ");
+       int rno1 = sc.nextInt();
+       System.out.println("Enter marks of student1: ");
+       double marks1 = sc.nextDouble();
+       sc.nextLine();
 
-          //data of 5 students: {roll no, name, marks}
-          int[] rno = new int [5];
-          String[] name = new String[5];
-          float[] marks = new float[5];
+       //Input of Student 2
+       System.out.println("Enter name of student2: ");
+       String name2 = sc.nextLine();
+       System.out.println("Enter roll no of student2: ");
+       int rno2 = sc.nextInt();
+       System.out.println("Enter marks of student2: ");
+       double marks2 = sc.nextDouble();
+       sc.nextLine();
 
-          Student[] students = new Student[5];
-          //just declaring
-          // Student jalaj;
-          Student jalaj = new Student(13, "Jalaj Kamat", 100);
-          Student niraj = new Student();
-          Student random = new Student();
-          Student one = new Student();
-          Student two = one;
-          one.name = "Prajwal Ghugare";
-          System.out.println(two.name);
-          // jalaj.rno = 69;
-          // jalaj.name = "Dalal";
-          // jalaj.marks = 99;
-          // jalaj.changeName("DOGLA DALAL");
-          // jalaj.greeting();
-          System.out.println("My name is: "+jalaj.name);
-          System.out.println("I love "+jalaj.rno);
-          System.out.println(jalaj.marks);
-          System.out.println("My name is: "+niraj.name);
-          System.out.println("I love "+niraj.rno);
-          System.out.println(niraj.marks);
-          System.out.println(random.name);
+       //Input of Student 3
+       System.out.println("Enter name of student3: ");
+       String name3 = sc.nextLine();
+       System.out.println("Enter roll no of student3: ");
+       int rno3 = sc.nextInt();
+       System.out.println("Enter marks of student3: ");
+       double marks3 = sc.nextDouble();
 
-     }
+       Student s1 = new Student(name1, rno1, marks1);
+       Student s2 = new Student(name2, rno2, marks2);
+       Student s3 = new Student(name3, rno3, marks3);
+
+       //Displaying Information
+       System.out.println("\n Student Details: ");
+       s1.display();
+       s2.display();
+       s3.display();
+       sc.close();
+   }
 }
